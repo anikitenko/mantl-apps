@@ -19,18 +19,18 @@
 
 ## Generate data
 
-    /opt/spark/bin/spark-submit --master spark://mi-worker-003:7077 --deploy-mode cluster
-	--class com.cisco.mantl.terasort.TeraGen hdfs:///mantl-apps/benchmarking-apps/spark-terasort-1.0-jar-with-dependencies.jar
+    /opt/spark/bin/spark-submit --master spark://mi-worker-003:7077 --deploy-mode cluster \
+	--class com.cisco.mantl.terasort.TeraGen hdfs:///mantl-apps/benchmarking-apps/spark-terasort-1.0-jar-with-dependencies.jar \
 	1G hdfs:///test/terainput
 
 ## Sort the data
 
-	/opt/spark/bin/spark-submit --master spark://mi-worker-003:7077 --deploy-mode cluster
-	--class com.cisco.mantl.terasort.TeraSort hdfs:///mantl-apps/benchmarking-apps/spark-terasort-1.0-jar-with-dependencies.jar
+	/opt/spark/bin/spark-submit --master spark://mi-worker-003:7077 --deploy-mode cluster \
+	--class com.cisco.mantl.terasort.TeraSort hdfs:///mantl-apps/benchmarking-apps/spark-terasort-1.0-jar-with-dependencies.jar \
 	hdfs:///test/terainput hdfs:///test/teraoutput
 
 ## Validate the data
 
-	/opt/spark/bin/spark-submit --master spark://mi-worker-003:7077 --deploy-mode cluster
-	--class com.cisco.mantl.terasort.TeraValidate hdfs:///mantl-apps/benchmarking-apps/spark-terasort-1.0-jar-with-dependencies.jar
+	/opt/spark/bin/spark-submit --master spark://mi-worker-003:7077 --deploy-mode cluster \
+	--class com.cisco.mantl.terasort.TeraValidate hdfs:///mantl-apps/benchmarking-apps/spark-terasort-1.0-jar-with-dependencies.jar \
 	hdfs:///test/teraoutput hdfs:///test/teravalidate
