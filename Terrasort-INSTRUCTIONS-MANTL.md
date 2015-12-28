@@ -1,6 +1,7 @@
-#TeraSort benchmark for Spark. This instruction should be applicable to any Mesos managed cluster
+# TeraSort benchmark for Spark.
+## This instruction should be applicable to any Mesos managed cluster
 
-This is a Spark-based TeraSort application.
+## This is a Spark-based TeraSort application.
 
 # Building
 
