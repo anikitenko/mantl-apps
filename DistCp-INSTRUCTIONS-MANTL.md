@@ -1,8 +1,14 @@
 ## This is a Spark-based DistCP application.
 
-# Building
+* Login to a cluster and create a directory for jar files:
 
-`mvn clean package`
+```
+$ git clone https://github.com/CiscoCloud/mantl-apps.git
+$ cd mantl-apps/useful-apps/spark-useful-apps/spark-distcp
+$ mvn -Dmaven.test.skip=true clean package
+```
+* **create config file with swift-api configuration(see "swift.conf example")**
+* **create an object by link: https://us-texas-3.cloud.cisco.com/horizon/project/containers/sasa/tmp/tmp1.txt**
 
 * swift.conf example:
 ```

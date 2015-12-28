@@ -1,11 +1,19 @@
 # TestDFSIO for Spark.
-## This instruction should be applicable to any Mesos managed cluster
 
-## This is a Spark-based TestDFSIO application.
+## Prerequisites
 
-# Building
+* Make sure your user have home directory on HDFS (or any other directory with write permissions).
 
-`mvn clean package`
+The below steps are based on the assumption that user's home directory on HDFS is `/user/$USER` where `$USER` is the current user logged on to the gateway host.
+
+* Login to a gateway host and run the below commands:
+
+```
+git clone https://github.com/CiscoCloud/mantl-apps
+cd mantl-apps/benchmarking-apps/spark-benchmarking-apps/spark-test-dfsio
+mvn clean package
+ls -al target/spark-test-dfsio-with-dependencies.jar
+```
 
 # Running
 

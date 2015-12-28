@@ -1,11 +1,15 @@
 # TeraSort benchmark for Spark.
-## This instruction should be applicable to any Mesos managed cluster
 
-## This is a Spark-based TeraSort application.
+## Prerequisites
 
-# Building
+* Login to a cluster and create a directory for jar files. Here is an example for Lambda cluster:
 
-`mvn install`
+```
+git clone https://github.com/CiscoCloud/mantl-apps
+cd mantl-apps/benchmarking-apps/spark-benchmarking-apps/spark-terasort
+mvn clean package
+ls -al target/spark-terasort-1.0-jar-with-dependencies.jar
+```
 
 # Running
 
