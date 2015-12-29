@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* Login to a cluster and create a directory for jar files. Here is an example for Lambda cluster:
+* Login to a cluster and create a directory for jar files. Here is an example for MANTL cluster:
 
 ```
 git clone https://github.com/CiscoCloud/mantl-apps
@@ -22,6 +22,8 @@ ls -al target/spark-terasort-1.0-jar-with-dependencies.jar
 	hadoop fs -put target/spark-terasort-1.0-jar-with-dependencies.jar hdfs://hdfs/mantl-apps/benchmarking-apps/
 
 ## Generate data
+
+	hadoop fs -rm -r -f -skipTrash /test/terainput
 
     /opt/spark/bin/spark-submit --master spark://mi-worker-003:7077 --deploy-mode cluster \
 	--class com.cisco.mantl.terasort.TeraGen hdfs:///mantl-apps/benchmarking-apps/spark-terasort-1.0-jar-with-dependencies.jar \

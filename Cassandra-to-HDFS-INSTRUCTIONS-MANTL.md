@@ -11,7 +11,7 @@ Tested on:
 
 * Java 1.7.0_67
 * Maven 3.3.3 (project assembly)
-* CDH 5.4.2 & Spark 1.3.0 (job runtime)
+* Spark 1.3.0 (job runtime)
 * Cassandra 2.2.3
 
 ## Prerequisites
