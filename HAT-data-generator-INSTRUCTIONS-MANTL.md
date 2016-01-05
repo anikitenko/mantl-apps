@@ -60,9 +60,9 @@ ls -al target/hat-data-generator-1.0.jar
  * Copy jar to HDFS:
  
 ```
-hdfs dfs -mkdir -p mantl-apps/useful-apps
-hdfs dfs -put -f target/hat-data-generator-1.0.jar mantl-apps/useful-apps
-hdfs dfs -ls mantl-apps/useful-apps/hat-data-generator-1.0.jar
+hadoop fs -mkdir -p mantl-apps/useful-apps
+hadoop fs -put -f target/hat-data-generator-1.0.jar mantl-apps/useful-apps
+hadoop fs -ls mantl-apps/useful-apps/hat-data-generator-1.0.jar
 ```
 
 ## Run Application
@@ -119,7 +119,7 @@ For Cassandra output:
 /opt/spark/bin/spark-submit --master spark://mi-worker-003:7077 --deploy-mode cluster --class com.cisco.mantl.hat.gen.HATGenDriver hdfs:///user/$USER/mantl-apps/useful-apps/hat-data-generator-1.0.jar --out cassandra-mantl-node.service.consul:9042:mykeyspace:users --amount 10 --frequency 1 --batchsize 10 --print true
 ```
 
-* Kill application after making sure it stopped spawning data (required due to the bug). This can be done via stdout log, --print true must be set for the job.
+* Kill application on worker node after making sure it stopped spawning data (required due to the bug). This can be done via stdout log, --print true must be set for the job.
 ```
 ps ax | grep HATGenDriver
 kill -9 <process_id>
