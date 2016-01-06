@@ -1,3 +1,7 @@
+# IntelliJ IDEA
+.idea
+mantl-apps.iml
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
